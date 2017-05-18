@@ -57,6 +57,7 @@ describe Calculator do
         end
         it 'returns a float if there is a remainder' do
             expect(c.divide(2, 3)).to be_within(0.5).of(0.666)
+            expect(c.divide(2, 3)).to be_a(Float)
         end
     end #divide
 
@@ -73,6 +74,9 @@ describe Calculator do
         it 'returns the power of its decimal arguments' do
             expect(c.pow(27, 1/3.0)).to eq(3.0)
         end
+        it 'returns 1 when the exponent is 0' do
+            expect(c.pow(3, 0)).to eq(1)
+        end
     end #power
 
     describe '#sqrt' do
@@ -87,6 +91,7 @@ describe Calculator do
         end
         it 'returns 2-digit decimals for non-round roots' do
             expect(c.sqrt(8)).to eq(2.83)
+            expect(c.sqrt(8)).not_to eq(2.8) 
         end
     end #sqrt
 
