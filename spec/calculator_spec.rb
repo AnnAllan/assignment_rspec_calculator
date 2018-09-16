@@ -16,7 +16,7 @@ describe Calculator do
         it 'returns the sum of its integer and float arguments' do
             expect(c.add(1, 0.2)).to eq(1.2)
         end
-    end  #add
+    end
 
     describe '#subtract' do
         it 'returns the difference of its postive arguments' do
@@ -31,7 +31,7 @@ describe Calculator do
         it 'returns the difference of its float and integer arguments' do
             expect(c.subtract(1, 0.2)).to eq(0.8)
         end
-    end #subtract
+    end
 
     describe '#multiply' do
         it 'returns the product of its arguments' do
@@ -43,7 +43,7 @@ describe Calculator do
         it 'returns the product of its float arguments' do
             expect(c.multiply(0.2, 0.3)).to be_within(0.5).of(0.06)
         end
-    end #multiply
+    end
 
     describe '#divide' do
         it 'returns the quotient of its arguments' do
@@ -59,7 +59,7 @@ describe Calculator do
             expect(c.divide(2, 3)).to be_within(0.5).of(0.666)
             expect(c.divide(2, 3)).to be_a(Float)
         end
-    end #divide
+    end
 
     describe '#pow' do
         it 'returns the power of its postive arguemtns' do
@@ -77,7 +77,7 @@ describe Calculator do
         it 'returns 1 when the exponent is 0' do
             expect(c.pow(3, 0)).to eq(1)
         end
-    end #power
+    end
 
     describe '#sqrt' do
         it 'returns the square root for positive argumetns' do
@@ -91,9 +91,9 @@ describe Calculator do
         end
         it 'returns 2-digit decimals for non-round roots' do
             expect(c.sqrt(8)).to eq(2.83)
-            expect(c.sqrt(8)).not_to eq(2.8) 
+            expect(c.sqrt(8)).not_to eq(2.8)
         end
-    end #sqrt
+    end
 
     describe '#memory=' do
         it ' stores an object in memory' do
@@ -105,7 +105,7 @@ describe Calculator do
             c.memory = 9
             expect(c.memory).to eq(9)
         end
-    end #memory=
+    end
 
     describe '#memory' do
         it 'returns the object in memory' do
@@ -120,7 +120,7 @@ describe Calculator do
         it 'starts as nil' do
             expect(c.memory).to eq(nil)
         end
-    end #memroy
+    end
 
     context '#stringify' do
         let(:c_string){Calculator.new(true)}
@@ -155,5 +155,5 @@ describe Calculator do
                     expect(c_string.sqrt(9)).to be_kind_of(String)
                 end
             end
-    end #stringify
+    end 
 end
